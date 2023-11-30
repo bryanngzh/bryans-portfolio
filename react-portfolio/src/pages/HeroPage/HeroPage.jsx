@@ -1,3 +1,4 @@
+import { RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
 import { TypeAnimation } from "react-type-animation";
 import heroImage from "../../assets/hero/hero-image.png";
 import styles from "./Hero.module.css";
@@ -9,7 +10,7 @@ const HeroPage = () => {
         <div className="col-span-7 place-self-center text-center sm:text-left">
           <h1 className={styles.header}>
             <div className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-pink-500 to-orange-500">
-              Hello, I'm
+              Hello👋, I&#39;m
             </div>
             <div>Bryan</div>
             <TypeAnimation
@@ -29,17 +30,22 @@ const HeroPage = () => {
             />
           </h1>
           <p className={styles.body}>
-            I enjoy creating digital solutions as a software engineer and I'm
-            always looking for new opportunities to learn and develop new
-            skills.
+            I enjoy creating digital solutions as a software engineer and
+            I&#39;m always looking for new opportunities to learn and develop
+            new skills.
           </p>
-          <div>
-            <button className="px-6 py-3 rounded-full mr-4 bg-gradient-to-br from-red-500 via-pink-500 to-orange-500 hover:bg-slate-200 text-white">
-              Hire Me
-            </button>
+          <div className="flex flex-row items-center justify-between">
             <button className="px-6 py-3 rounded-full bg-transparent hover:bg-slate-800 text-white border border-white">
               Download CV
             </button>
+            <div className="flex flex-row space-x-4">
+              <button className="w-12 h-12 rounded-full bg-gradient-to-br from-red-500 via-pink-500 to-orange-500 hover:bg-slate-200 text-white flex items-center justify-center">
+                <RxGithubLogo />
+              </button>
+              <button className="w-12 h-12 rounded-full bg-gradient-to-br from-red-500 via-pink-500 to-orange-500 hover:bg-slate-200 text-white flex items-center justify-center">
+                <RxLinkedinLogo />
+              </button>
+            </div>
           </div>
         </div>
         <div className="col-span-5 place-self-center mt-4 lg:mt-0">
