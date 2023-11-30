@@ -1,0 +1,8 @@
+.header {
+  /* smaller screens 4xl, larger screens 6xl */
+  @apply text-white mb-4 text-4xl lg:text-6xl font-extrabold;
+}
+
+.body {
+  @apply text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl;
+}
