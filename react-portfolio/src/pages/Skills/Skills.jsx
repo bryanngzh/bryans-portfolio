@@ -16,6 +16,7 @@ const web = [
   "Netlify",
   "Git",
   "Figma",
+  "Postman",
 ];
 
 const language = ["Javascript", "Typescript", "Java", "Python", "C", "Bash"];
