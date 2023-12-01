@@ -60,7 +60,7 @@ const Qualifications = () => {
   const [type, setType] = useState("work");
 
   return (
-    <section className="py-40" id="qualifications">
+    <section className="pt-40" id="qualifications">
       <div className="mt-4 md:mt-0 text-center flex flex-col h-full">
         <h1 className="text-4xl text-white font-poppins font-semibold mb-2">
           Qualifications
