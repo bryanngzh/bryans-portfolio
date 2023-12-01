@@ -5,8 +5,8 @@ import NavLink from "./NavLink";
 
 const navLinks = [
   {
-    title: "Experiences",
-    href: "#experiences",
+    title: "Qualifications",
+    href: "#qualifications",
   },
   {
     title: "Skills",

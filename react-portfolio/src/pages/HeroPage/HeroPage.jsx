@@ -1,6 +1,8 @@
 import { RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
 import { TypeAnimation } from "react-type-animation";
 import heroImage from "../../assets/hero/hero-image.png";
+import Button from "../../components/Button";
+import Icon from "../../components/Icon";
 import styles from "./Hero.module.css";
 
 const HeroPage = () => {
@@ -35,16 +37,10 @@ const HeroPage = () => {
             new skills.
           </p>
           <div className="flex flex-row items-center justify-between">
-            <button className="px-6 py-3 rounded-full bg-transparent hover:bg-slate-800 text-white border border-white">
-              Download CV
-            </button>
+            <Button text={"Download CV"} />
             <div className="flex flex-row space-x-4">
-              <button className="w-12 h-12 rounded-full bg-gradient-to-br from-red-500 via-pink-500 to-orange-500 hover:bg-slate-200 text-white flex items-center justify-center">
-                <RxGithubLogo />
-              </button>
-              <button className="w-12 h-12 rounded-full bg-gradient-to-br from-red-500 via-pink-500 to-orange-500 hover:bg-slate-200 text-white flex items-center justify-center">
-                <RxLinkedinLogo />
-              </button>
+              <Icon icon={<RxGithubLogo />} />
+              <Icon icon={<RxLinkedinLogo />} />
             </div>
           </div>
         </div>
