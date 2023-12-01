@@ -39,8 +39,14 @@ const HeroPage = () => {
           <div className="flex flex-row items-center justify-between">
             <Button text={"Download CV"} />
             <div className="flex flex-row space-x-4">
-              <Icon icon={<RxGithubLogo />} />
-              <Icon icon={<RxLinkedinLogo />} />
+              <Icon
+                icon={<RxGithubLogo />}
+                link={"https://github.com/bryanngzh"}
+              />
+              <Icon
+                icon={<RxLinkedinLogo />}
+                link={"https://www.linkedin.com/in/bryanngzh/"}
+              />
             </div>
           </div>
         </div>

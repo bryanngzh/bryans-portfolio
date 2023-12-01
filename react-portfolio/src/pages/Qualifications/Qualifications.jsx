@@ -24,7 +24,7 @@ const WorkExpData = [
   {
     title: "Software Engineer",
     company: "Study.io",
-    desc: "Designed and built a all-in-one study platform for NUS students as part of CP2106. Attained highest level of achievement, Artemis.",
+    desc: "Designed and built an all-in-one study platform for NUS students as part of CP2106. Attained highest level of achievement, Artemis.",
     duration: "05/2022 - 08/2022",
     icon: <FaGraduationCap />,
     tags: [
