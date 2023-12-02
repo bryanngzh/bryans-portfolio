@@ -10,11 +10,12 @@ function App() {
     <>
       <div className={styles.page}>
         <NavBar />
-        <div className="mt-32 px-12 py-4 container mx-auto">
+        <div className="mt-32 px-12 py-4 container mx-auto ">
           <HeroPage />
           <Qualifications />
           <Skills />
           <Projects />
+          <div className="mb-32" />
         </div>
       </div>
     </>

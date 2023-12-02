@@ -1,6 +1,7 @@
-body {
+body,
+html {
   /* Default fonts */
-  @apply text-white;
+  @apply text-white overflow-x-hidden;
 }
 
 .page {

@@ -1,4 +1,7 @@
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
 import { RxGithubLogo, RxLinkedinLogo } from "react-icons/rx";
+import { useInView } from "react-intersection-observer";
 import { TypeAnimation } from "react-type-animation";
 import heroImage from "../../assets/hero/hero-image.png";
 import Button from "../../components/Button";
@@ -6,9 +9,31 @@ import Icon from "../../components/Icon";
 import styles from "./Hero.module.css";
 
 const HeroPage = () => {
+  // anmiation
+  const { ref, inView } = useInView({ threshold: 1 });
+  const animation = useAnimation();
+
+  const handleDownload = () => {
+    const pdfPath = "/bryanngzh_cv.pdf";
+    window.open(pdfPath, "_blank");
+  };
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({ opacity: 1 });
+    } else {
+      animation.start({ opacity: 0 });
+    }
+  }, [inView, animation]);
+
   return (
-    <section>
-      <div className="grid grid-cols-1 sm:grid-cols-12">
+    <section ref={ref}>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={animation}
+        transition={{ duration: 1 }}
+        className="grid grid-cols-1 sm:grid-cols-12"
+      >
         <div className="col-span-7 place-self-center text-center sm:text-left">
           <h1 className={styles.header}>
             <div className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-pink-500 to-orange-500">
@@ -37,7 +62,7 @@ const HeroPage = () => {
             new skills.
           </p>
           <div className="flex flex-row items-center justify-between">
-            <Button text={"Download CV"} />
+            <Button onClick={handleDownload} text={"Download CV"} />
             <div className="flex flex-row space-x-4">
               <Icon
                 icon={<RxGithubLogo />}
@@ -59,7 +84,7 @@ const HeroPage = () => {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

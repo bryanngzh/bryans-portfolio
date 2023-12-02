@@ -1,3 +1,6 @@
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import ProjectCard from "./ProjectCard";
 
 const projectsData = [
@@ -20,19 +23,56 @@ const projectsData = [
 ];
 
 const Projects = () => {
+  // header animation
+  const { ref, inView } = useInView({ threshold: 0.1 });
+  const animation = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({ opacity: 1 });
+    } else {
+      animation.start({ opacity: 0 });
+    }
+  }, [inView, animation]);
+
+  // projects animation
+  const controls = useAnimation();
+  const { ref: ref2, inView: inView2 } = useInView({ threshold: 0.1 });
+
+  useEffect(() => {
+    if (inView2) {
+      controls.start({ opacity: 1, x: 0 });
+    } else {
+      controls.start({ opacity: 0, x: "-100vh" });
+    }
+  }, [inView2, controls]);
+
   return (
     <section className="pt-40" id="projects">
-      <div className="mt-4 md:mt-0 text-center flex flex-col h-full">
-        <h1 className="text-4xl text-white font-poppins font-semibold mb-2">
-          Projects
-        </h1>
-        <p className="text-1xl text-gray-400 font-poppins mb-2">
-          Blood Sweat and Tears
-        </p>
-        <div className="mt-16">
-          <ul className="grid md:grid-cols-3 gap-8 md:gap-12">
+      <div ref={ref} className="mt-4 md:mt-0 text-center flex flex-col h-full">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={animation}
+          transition={{ duration: 1 }}
+        >
+          <h1 className="text-4xl text-white font-poppins font-semibold mb-2">
+            Projects
+          </h1>
+          <p className="text-1xl text-gray-400 font-poppins mb-2">
+            Blood Sweat and Tears
+          </p>
+        </motion.div>
+        <div className="mt-8 md:mt-16">
+          <ul ref={ref2} className="grid md:grid-cols-3 gap-8 md:gap-12">
             {projectsData.map((project, id) => (
-              <ProjectCard key={id} project={project} />
+              <motion.li
+                initial={{ opacity: 0, x: "-100vh" }}
+                animate={controls}
+                transition={{ duration: 0.5, delay: id * 0.1 }}
+                key={id}
+              >
+                <ProjectCard key={id} project={project} />
+              </motion.li>
             ))}
           </ul>
         </div>

@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useState } from "react";
 import { FaGraduationCap } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
+import { useInView } from "react-intersection-observer";
 import Button from "../../components/Button";
 import Timeline from "./Timeline";
 
@@ -59,31 +61,52 @@ const EduExpData = [
 const Qualifications = () => {
   const [type, setType] = useState("work");
 
+  // header anmiation
+  const { ref, inView } = useInView();
+  const animation = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({ opacity: 1 });
+    } else {
+      animation.start({ opacity: 0 });
+    }
+  }, [inView, animation]);
+
   return (
     <section className="pt-40" id="qualifications">
       <div className="mt-4 md:mt-0 text-center flex flex-col h-full">
-        <h1 className="text-4xl text-white font-poppins font-semibold mb-2">
-          Qualifications
-        </h1>
-        <p className="text-1xl text-gray-400 font-poppins mb-2">
-          My personal journey
-        </p>
-        <div className="mt-4 flex space-x-4 items-center justify-center">
-          <Button
-            text={"Work"}
-            icon={<MdWork />}
-            onClick={() => setType("work")}
-          />
-          <Button
-            text={"Education"}
-            icon={<FaGraduationCap />}
-            onClick={() => setType("education")}
-          />
-        </div>
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0 }}
+          animate={animation}
+          transition={{ duration: 1 }}
+        >
+          <h1 className="text-4xl text-white font-poppins font-semibold mb-2">
+            Qualifications
+          </h1>
+          <p className="text-1xl text-gray-400 font-poppins mb-2">
+            My personal journey
+          </p>
+
+          <div className="mt-4 flex space-x-4 items-center justify-center">
+            <Button
+              text={"Work"}
+              icon={<MdWork />}
+              onClick={() => setType("work")}
+            />
+            <Button
+              text={"Education"}
+              icon={<FaGraduationCap />}
+              onClick={() => setType("education")}
+            />
+          </div>
+        </motion.div>
         {type == "work" ? (
-          <Timeline data={WorkExpData} />
+          // adding the key here forces component re-renders every time the type state changes
+          <Timeline key={type} data={WorkExpData} />
         ) : (
-          <Timeline data={EduExpData} />
+          <Timeline key={type} data={EduExpData} />
         )}
       </div>
     </section>
