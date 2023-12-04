@@ -10,7 +10,7 @@ import styles from "./Hero.module.css";
 
 const HeroPage = () => {
   // anmiation
-  const { ref, inView } = useInView({ threshold: 1 });
+  const { ref, inView } = useInView();
   const animation = useAnimation();
 
   const handleDownload = () => {
@@ -27,8 +27,9 @@ const HeroPage = () => {
   }, [inView, animation]);
 
   return (
-    <section ref={ref}>
+    <section>
       <motion.div
+        ref={ref}
         initial={{ opacity: 0 }}
         animate={animation}
         transition={{ duration: 1 }}

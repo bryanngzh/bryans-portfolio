@@ -82,7 +82,7 @@ const Skills = () => {
             My craft and specialties
           </p>
 
-          <div className="mt-4 flex space-x-4 items-center justify-center">
+          <div className="mt-4 flex space-x-2 md:space-x-4 items-center justify-center">
             <Button
               text={"WebDev"}
               icon={<MdOutlineWebAsset />}
