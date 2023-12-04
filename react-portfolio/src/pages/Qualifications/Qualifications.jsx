@@ -45,7 +45,7 @@ const EduExpData = [
     title: "Bachelor of Computing, Computer Science (Hons)",
     company: "National University of Singapore",
     desc: "Took programming modules inclusive of methodology and data structures classes, with a focus on AI/ML, Software Engineering and Cybersecurity courses.",
-    duration: "05/2023 - Present",
+    duration: "08/2021 - Present",
     icon: <FaGraduationCap />,
     tags: [
       "React.js",
