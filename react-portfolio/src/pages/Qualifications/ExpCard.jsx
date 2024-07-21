@@ -8,11 +8,13 @@ const ExpCard = ({ exp }) => {
   return (
     <div className="h-full w-full rounded-md bg-gradient-to-r from-red-500 via-pink-500 to-orange-500 p-0.5">
       <div className="h-full w-full bg-[#181818] back p-3">
-        <div className={type == "Education" ? "flex space-x-4" : ""}>
+        <div
+          className={type == "Education" ? "flex space-x-4 items-center" : ""}
+        >
           <img
             src={logo}
             alt={`${company} logo`}
-            className={type == "Education" ? "h-12 w-12 mb-4 mt-2" : "h-8 mb-4"}
+            className={type == "Education" ? "h-12 w-12 mb-4" : "h-8 mb-4"}
           />
           <h1 className="text-xl font-bold mb-2 text-white text-left">
             {title}
