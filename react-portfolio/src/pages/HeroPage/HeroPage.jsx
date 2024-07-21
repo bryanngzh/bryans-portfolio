@@ -27,7 +27,7 @@ const HeroPage = () => {
   }, [inView, animation]);
 
   return (
-    <section>
+    <section className="flex items-center justify-center h-screen">
       <motion.div
         ref={ref}
         initial={{ opacity: 0 }}

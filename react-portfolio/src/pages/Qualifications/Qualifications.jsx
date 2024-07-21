@@ -83,7 +83,7 @@ const Qualifications = () => {
   }, [inView, animation]);
 
   return (
-    <section className="mt-40 pt-40" id="qualifications">
+    <section className="mt-80 pt-40" id="qualifications">
       <div className="mt-4 md:mt-0 text-center flex flex-col h-full">
         <motion.div
           ref={ref}

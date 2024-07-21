@@ -41,6 +41,14 @@ const projectsData = [
     tags: ["JavaFX", "JUnit", "Java"],
     gitUrl: "https://github.com/bryanngzh/Chatbot",
   },
+  {
+    title: "Automated Testing Engine",
+    desc: "Automated testing engine for the NUS Intelligent Tutoring System, using metamorphic testing techniques. Discovered over 20 bugs with a 100% accuracy rate, improving the system’s reliability.",
+    image: "/projects/testingengine.png",
+    tags: ["Python"],
+    gitUrl:
+      "https://github.com/cs3213-fse-2024/automated-testing-engine-group-16",
+  },
 ];
 
 const Projects = () => {
