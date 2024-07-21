@@ -49,7 +49,7 @@ const HeroPage = () => {
                 1000,
                 "Mobile Developer",
                 1000,
-                "Penultimate CS @ NUS",
+                "Final Year CS @ NUS",
                 1000,
               ]}
               wrapper="span"

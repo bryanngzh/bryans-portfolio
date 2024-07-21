@@ -5,7 +5,7 @@ import ProjectCard from "./ProjectCard";
 
 const projectsData = [
   {
-    title: "Study.io Web",
+    title: "Study.io Website",
     desc: "An all-in-one platform where students are able to plan their timetable, organize tasks, set reminders and take notes. The website also includes a Pomodoro Timer to help boost students productivity while studying.",
     image: "/projects/studyio.png",
     tags: ["React.js", "MongoDB", "Express.js", "Node.js"],
@@ -13,12 +13,33 @@ const projectsData = [
     previewUrl: "https://study-io.herokuapp.com/",
   },
   {
-    title: "Study.io Bot",
+    title: "Study.io Telegram Bot",
     desc: "Built to complement Study.io's website, this telegram bot sends daily reminders to students for upcoming events 3 days prior. Students are also able to view their daily and weekly schedule using this telegram bot.",
     image: "/projects/studyiotele.png",
     tags: ["Python", "MongoDB", "Heroku"],
     gitUrl: "https://github.com/bryanngzh/Study.io",
     previewUrl: "https://t.me/studyio_reminder_bot",
+  },
+  {
+    title: "Fitness Tracker",
+    desc: "Mobile Application to keep track of workouts using React Native, Node.js, Express.js and Firebase. Built this to kickstart my fitness journey and keep track of my runs and gym workouts for the month.",
+    image: "/projects/fitnesstracker.png",
+    tags: ["React Native", "Node.js", "Express.js", "Firebase"],
+    gitUrl: "https://github.com/bryanngzh/fitness-tracker",
+  },
+  {
+    title: "ProfNUS",
+    desc: "Desktop application built using JavaFX for professors to manage classes. This application is optimised for professors that prefer command-line interface( CLI) commands to graphical-user interface (GUI).",
+    image: "/projects/profnus.png",
+    tags: ["JavaFX", "JUnit", "Java"],
+    gitUrl: "https://github.com/bryanngzh/ProfNUS",
+  },
+  {
+    title: "Personal Chatbot",
+    desc: "Desktop personalized chat bot application built using JavaFX that helps you keep track of your tasks, events and deadlines! It comes included with a GUI to help you visualize the tasks better.",
+    image: "/projects/chatbot.png",
+    tags: ["JavaFX", "JUnit", "Java"],
+    gitUrl: "https://github.com/bryanngzh/Chatbot",
   },
 ];
 
@@ -48,7 +69,7 @@ const Projects = () => {
   }, [inView2, controls]);
 
   return (
-    <section className="pt-40" id="projects">
+    <section className="pt-40 mt-40" id="projects">
       <div ref={ref} className="mt-4 md:mt-0 text-center flex flex-col h-full">
         <motion.div
           initial={{ opacity: 0 }}

@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-import { BsEye } from "react-icons/bs";
+// import { BsEye } from "react-icons/bs";
 import { PiCodeLight } from "react-icons/pi";
 import Tag from "../../components/Tag";
 
 const ProjectCard = ({ project }) => {
-  const { title, desc, image, tags, gitUrl, previewUrl } = project;
+  const { title, desc, image, tags, gitUrl } = project;
   return (
     <div>
       <div
@@ -18,12 +18,12 @@ const ProjectCard = ({ project }) => {
           >
             <PiCodeLight className="h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  cursor-pointer group-hover/link:text-white" />
           </a>
-          <a
+          {/* <a
             href={previewUrl}
             className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link"
           >
             <BsEye className="h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  cursor-pointer group-hover/link:text-white" />
-          </a>
+          </a> */}
         </div>
       </div>
       <div className="text-white rounded-b-xl bg-[#181818] py-6 px-4">

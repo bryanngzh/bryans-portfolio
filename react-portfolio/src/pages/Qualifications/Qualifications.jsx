@@ -8,9 +8,35 @@ import Timeline from "./Timeline";
 
 const WorkExpData = [
   {
+    logo: "./company/STENG_LOGO.png",
     title: "Software Engineer Intern",
-    company: "Millipede PTE LTD",
-    desc: "Defined and built new features for Millipede Android/iOS app in a modular and testable manner. Assisted in implementing REST APIs and user interfaces. Wrote advanced reports generation feature with customizable parameters. ",
+    company: "ST Engineering",
+    desc: [
+      "Mission & Software Services, Application Modernization.",
+      "Developed a micro front-end sense-making web application utilizing Vite Module Federation, Vue.js & Pinia for a multi-tenant environment.",
+      "Engineered robust RESTful APIs using Springboot to facilitate communication between microservices.",
+      "Deployed an internal documentation tool using Docker & Kubernetes, enhancing operational efficiency by 30%.",
+    ],
+    duration: "05/2024 - 08/2024",
+    icon: <MdWork />,
+    tags: [
+      "Vue.js",
+      "Springboot",
+      "Docker",
+      "Kubernetes",
+      "Microsoft SQL Server",
+    ],
+    type: "Work",
+  },
+  {
+    logo: "./company/MILLI_LOGO.png",
+    title: "Software Engineer Intern",
+    company: "Millipede",
+    desc: [
+      "Designed and implemented a dynamic report generation tool with customizable templates driven by user inputs, using Node.js, PDFKit and React, reducing manual configuration time by 60%.",
+      "Developed Millipede's mobile application using React Native and admin portal using React, ensuring alignment with Figma prototype designs for enhanced user experiences.",
+      "Engineered and optimized RESTful APIs and back-end services using Node.js, Express.js, and TSOA for both projects in sprints, achieving substantial performance improvements.",
+    ],
     duration: "05/2023 - 11/2023",
     icon: <MdWork />,
     tags: [
@@ -20,41 +46,24 @@ const WorkExpData = [
       "Express.js",
       "Firebase",
       "TypeScript",
-      "Google Cloud Services",
+      "GCP",
     ],
-  },
-  {
-    title: "Software Engineer",
-    company: "Study.io",
-    desc: "Designed and built an all-in-one study platform for NUS students as part of CP2106. Attained highest level of achievement, Artemis.",
-    duration: "05/2022 - 08/2022",
-    icon: <FaGraduationCap />,
-    tags: [
-      "React.js",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "JavaScript",
-      "Heroku",
-    ],
+    type: "Work",
   },
 ];
 
 const EduExpData = [
   {
+    logo: "./company/NUS_LOGO.png",
     title: "Bachelor of Computing, Computer Science (Hons)",
     company: "National University of Singapore",
-    desc: "Took programming modules inclusive of methodology and data structures classes, with a focus on AI/ML, Software Engineering and Cybersecurity courses.",
-    duration: "08/2021 - Present",
-    icon: <FaGraduationCap />,
-    tags: [
-      "React.js",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "JavaScript",
-      "Heroku",
+    desc: [
+      "Took programming modules inclusive of methodology and data structures classes, with a focus on AI/ML, Software Engineering and Cybersecurity courses.",
     ],
+    duration: "08/2021 - 05/2024",
+    icon: <FaGraduationCap />,
+    tags: ["Software Engineering", "AI/ML", "Cybersecurity"],
+    type: "Education",
   },
 ];
 
@@ -74,7 +83,7 @@ const Qualifications = () => {
   }, [inView, animation]);
 
   return (
-    <section className="pt-40" id="qualifications">
+    <section className="mt-40 pt-40" id="qualifications">
       <div className="mt-4 md:mt-0 text-center flex flex-col h-full">
         <motion.div
           ref={ref}

@@ -1,29 +1,50 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
-import { FaNetworkWired, FaTeamspeak } from "react-icons/fa";
+import { FaCodeBranch, FaNetworkWired, FaTeamspeak } from "react-icons/fa";
 import { MdOutlineWebAsset } from "react-icons/md";
 import { useInView } from "react-intersection-observer";
 import Button from "../../components/Button";
 import SkillCard from "./SkillCard";
 
+const language = [
+  "C",
+  "Java",
+  "Javascript",
+  "Typescript",
+  "Python",
+  "SQL",
+  "Bash",
+  "HTML",
+  "CSS",
+];
+
 const web = [
   "React.js",
   "react-native",
+  "Vue.js",
   "Node.js",
   "Express.js",
-  "Firestore",
+  "Springboot",
   "MongoDB",
-  "Google Cloud Services",
-  "Heroku",
-  "Netlify",
-  "Git",
+  "Firestore",
+  "PostgreSQL",
+  "Microsoft SQL Server",
   "Figma",
   "Postman",
 ];
 
-const language = ["Javascript", "Typescript", "Java", "Python", "C", "Bash"];
+const devOps = [
+  "Docker",
+  "Kubernetes",
+  "Containerd",
+  "Google Cloud Platform",
+  "Heroku",
+  "Netlify",
+  "Git",
+  "Github",
+];
 
-const others = ["GDB", "scikit-learn"];
+const others = ["numpy", "scikit-learn", "pandas"];
 
 const AnimatedSkillCards = ({ type, isVisible }) => {
   const controls = useAnimation();
@@ -36,7 +57,15 @@ const AnimatedSkillCards = ({ type, isVisible }) => {
     }
   }, [isVisible, controls]);
 
-  const skills = type == "web" ? web : type == "language" ? language : others;
+  const skills =
+    type == "web"
+      ? web
+      : type == "language"
+      ? language
+      : type == "dev"
+      ? devOps
+      : others;
+
   return skills.map((skill, id) => (
     <motion.li
       initial={{ opacity: 0, y: 20 }}
@@ -68,7 +97,7 @@ const Skills = () => {
   }, [inView, animation]);
 
   return (
-    <section className="pt-40" id="skills">
+    <section className="mt-40 pt-40" id="skills">
       <div ref={ref} className="mt-4 md:mt-0 text-center flex flex-col h-full">
         <motion.div
           initial={{ opacity: 0 }}
@@ -87,6 +116,11 @@ const Skills = () => {
               text={"WebDev"}
               icon={<MdOutlineWebAsset />}
               onClick={() => setSkill("web")}
+            />
+            <Button
+              text={"DevOps"}
+              icon={<FaCodeBranch />}
+              onClick={() => setSkill("dev")}
             />
             <Button
               text={"Language"}
